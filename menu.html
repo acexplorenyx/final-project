@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="menustyle.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href=""><img src="logo.png" alt=""></a>
+            <ul>
+                <li><a href="index.html#home">HOME</a></li>
+
+                <!-- dropdown for menu lists-->
+                <li>
+                    <div class="dropdown">
+                        <a href="menu.html">MENU</a>
+                        <div class="dropdown-content">
+                            <ul>
+                                <li><a href="#appetizers">Appetizers</a></li>
+                                <li><a href="#morningplates">Morning Plates</a></li>
+                                <li><a href="#house-fav">House Favorites</a></li>
+                                <li><a href="#pastas">Pastas & Plates</a></li>
+                                <li><a href="#sweets">Sweet Farewell</a></li>
+                                <li><a href="#beverages">Beverages</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="reservation.html">RESERVATION</a></li>
+                <li><a href="index.html#about">ABOUT</a></li>
+                <li><a href="index.html#contact">CONTACT</a></li>
+                <li><a href="index.html#reviews">REVIEWS</a></li>
+                <div class="search-con">
+                    <input type="text" placeholder="Search here...">
+                    <li><i class="fa-solid fa-magnifying-glass" style="color: #9D1F15;"></i></li>
+                </div>
+                <li><button onclick="openLoginpage()" class="loginbtn"><i class="fa-solid fa-user"></i></button>
+                <li><i class="fa-solid fa-cart-shopping"></i></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Menu categories -->
+    <h1 class="menulbl">──── Menu ────</h1>
+    <section id="appetizers">
+        <h1>Appetizers</h1>
+        <div class="item-container">
+            <div class="a item">
+                <img src="menu-images/Mozzarella-Sticks.jpg" alt="Mozzarella Sticks">
+                <h5>Best Seller</h5>
+                <h3>6pcs of Mozzarella Sticks</h3>
+                <p>Php 180.00</p>
+                <button>Add to cart</button>
+            </div>
+            <div class="a item">
+                <img src="menu-images/Waffle-fries.jpg" alt="Waffle Fries">
+                <h3>Waffle Fries</h3>
+                <p>Php 170.00</p>
+                <button>Add to cart</button>
+            </div>
+            <div class="a item">
+                <img src="menu-images/Creamy-mushroom.jpg" alt="Creamy Mushroom Soup">
+                <h3>1-bowl of Creamy Mushroom</h3>
+                <p>Php 80.00</p>
+                <button>Add to cart</button>
+            </div>
+            <div class="a item">
+                <img src="menu-images/Chicharon-bulaklak.avif" alt="Chicharon Bulaklak">
+                <h3>Chicharon Bulaklak</h3>
+                <p>Php 170.00</p>
+                <button>Add to cart</button>
+            </div>
+            <div class="a item">
+                <img src="menu-images/Lumpiang-shanghai.jpg" alt="Lumpiang Shanghai">
+                <h3>Lumpiang Shanghai</h3>
+                <p>Php 200.00</p>
+                <button>Add to cart</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="morningplates">
+        <h1>Morning Plates</h1>
+        <div class="item-container">
+            <div class="mp item">
+                <img src="menu-images/Pancake.jpg" alt="Pancake">
+                <h5>Best Seller</h5>
+                <h3>Pancake</h3>
+                <p>Php 110.00</p>
+                <button>Add to cart</button>
+            </div>
+            <div class="mp item">
+                <img src="menu-images/French-toast.jpg" alt="French Toast">
+                <h3>French Toast</h3>
+                <p>Php 90.00</p>
+                <button>Add to cart</button>
+            </div>
+            <div class="mp item">
+                <img src="menu-images/Tapsilog.jpg" alt="Tapsilog">
+                <h3>TapSiLog</h3>
+                <p>Php 70.00</p>
+                <button>Add to cart</button>
+            </div>
+            <div class="mp item">
+                <img src="menu-images/Omurice.jpg" alt="Omurice">
+                <h3>Omurice</h3>
+                <p>Php 85.00</p>
+                <button>Add to cart</button>
+            </div>
+            <div class="mp item">
+                <img src="menu-images/Savory-muffins.jpeg" alt="Savory Muffins">
+                <h3>6pcs of Savory Muffins</h3>
+                <p>Php 70.00</p>
+                <button>Add to cart</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="house-fav">
+        <h1>House Favorites</h1>
+        <div class="item-container">
+            <div class="hf item">
+                <img src="menu-images/Grilled-chicken.jpg" alt="Grilled Chicken">
+                <h5>Best Seller</h5>
+                <h3>Grilled Chicken</h3>
+                <p>Php 200.00</p>
+                <button>Add to cart</button>
+            </div>
+            <div class="hf item">
+                <img src="menu-images/Salisbury-steak.jpg" alt="Salisbury Steak">
+                <h3>Salisbury Steak with Rice</h3>
+                <p>Php 280.00</p>
+                <button>Add to cart</button>
+            </div>
+            <div class="hf item">
+                <img src="menu-images/Vegetable-Stir-Fry.jpg" alt="Vegetable Stir Fry">
+                <h3>Vegetable Stir Fry</h3>
+                <p>Php 120.00</p>
+                <button>Add to cart</button>
+            </div>
+            <div class="hf item">
+                <img src="menu-images/Sweet-and-sour.avif" alt="Sweet and Sour Fish Fillet">
+                <h3>Sweet and Sour Fish Fillet</h3>
+                <p>Php 150.00</p>
+                <button>Add to cart</button>
+            </div>
+            <div class="hf item">
+                <img src="menu-images/Roasted-pork.jpg" alt="Roast Pork">
+                <h3>Roast Pork</h3>
+                <p>Php 200.00</p>
+                <button>Add to cart</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="pastas">
+        <h1>Pastas & Plates</h1>
+        <div class="item-container">
+            <div class="p item">
+                <img src="menu-images/Spaghetti.jpg" alt="Spaghetti">
+                <h5>Best Seller</h5>
+                <h3>Spaghetti Bolognese</h3>
+                <p>Php 150.00</p>
+                <button>Add to cart</button>
+            </div>
+            <div class="p item">
+                <img src="menu-images/Carbonara.jpeg" alt="Carbonara">
+                <h3>Carbonara</h3>
+                <p>Php 150.00</p>
+                <button>Add to cart</button>
+            </div>
+            <div class="p item">
+                <img src="menu-images/Lasagna.jpg" alt="Lasagna">
+                <h3>Lasagna</h3>
+                <p>Php 100.00</p>
+                <button>Add to cart</button>
+            </div>
+            <div class="p item">
+                <img src="menu-images/Mac-and-cheese.jpg" alt="Mac and Cheese">
+                <h3>Mac and Cheese</h3>
+                <p>Php 135.00</p>
+                <button>Add to cart</button>
+            </div>
+            <div class="p item">
+                <img src="menu-images/Chicken-Alfredo.jpg" alt="Chicken Alfredo">
+                <h3>Creamy Chicken Alfredo</h3>
+                <p>Php 135.00</p>
+                <button>Add to cart</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="sweets">
+        <h1>Sweet Farewell</h1>
+        <div class="item-container">
+            <div class="s item">
+                <img src="menu-images/Lava-cake.jpg" alt="Lava Cake">
+                <h5>Best Seller</h5>
+                <h3>Lava Cake</h3>
+                <p>Php 120.00</p>
+                <button>Add to cart</button>
+            </div>
+            <div class="s item">
+                <img src="menu-images/cheesecake.jpg" alt="Cheesecake">
+                <h3>Cheesecake</h3>
+                <p>Php 90.00</p>
+                <button>Add to cart</button>
+            </div>
+            <div class="s item">
+                <img src="menu-images/chocolate-icecream.avif" alt="Chocolate Ice Cream">
+                <h3>Chocolate Ice Cream</h3>
+                <p>Php 70.00</p>
+                <button>Add to cart</button>
+            </div>
+            <div class="s item">
+                <img src="menu-images/buko-pandan.avif" alt="Buko Pandan">
+                <h3>Buko Pandan</h3>
+                <p>Php 50.00</p>
+                <button>Add to cart</button>
+            </div>
+            <div class="s item">
+                <img src="menu-images/Maja-Blanca.jpg" alt="Maja Blanca">
+                <h3>2 slice of Maja Blanca</h3>
+                <p>Php 70.00</p>
+                <button>Add to cart</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="beverages">
+        <h1>Beverages</h1>
+        <div class="item-container">
+            <div class="b item">
+                <img src="menu-images/Iced-coffee.jpg" alt="Iced Coffee">
+                <h5>Best Seller</h5>
+                <h3>Iced Coffee</h3>
+                <p>Php 55.00</p>
+                <button>Add to cart</button>
+            </div>
+            <div class="s item">
+                <img src="menu-images/Iced-tea.jpg" alt="Iced Tea">
+                <h3>1 Pitcher of Iced Tea</h3>
+                <p>Php 50.00</p>
+                <button>Add to cart</button>
+            </div>
+            <div class="s item">
+                <img src="menu-images/Cappuccino.jpg" alt="Cappuccino">
+                <h3>Cappuccino</h3>
+                <p>Php 40.00</p>
+                <button>Add to cart</button>
+            </div>
+            <div class="s item">
+                <img src="menu-images/wine.jpg" alt="Wine">
+                <h3>1 Bottle of Wine</h3>
+                <p>Php 320.00</p>
+                <button>Add to cart</button>
+            </div>
+            <div class="s item">
+                <img src="menu-images/soda.jpg" alt="Soda">
+                <h3>1.5ml of Soda</h3>
+                <p>Php 79.00</p>
+                <button>Add to cart</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col sub">
+                <label for="subscription">Don't miss out on our latest news and offers!
+                    Subscribe to our newsletter.</label>
+                </label><br>
+                <input type="text" name="subscription" id="subscription" placeholder="Enter your email...">
+                <button type="submit" class="subscribe-btn">Subscribe</button>
+            </div>
+            <div class="footer-col media-icons">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-tiktok"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footerbottom">
+            <p>Copyright &copy; 2025 JRN. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function openLoginpage() {
+            window.location.href = "loginpage.html";
+        }
+    </script>
+</body>
+</html>
