@@ -1,0 +1,260 @@
+* {
+    margin: 0 auto;
+    scroll-behavior: smooth;
+}
+body {
+    background-color: #FBF7BA;
+}
+#home, #menu, #about, #contact, #reviews {
+    scroll-margin-top: 120px;
+}
+
+/* Header part */
+header {
+    background: linear-gradient(to bottom, #c5352b, #9D1F15);
+    color: white;
+    padding: 15px 10px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img {
+    width: 60px;
+    height: 60px;
+    margin-left: -290px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    position: relative;
+}
+header ul li a::after {
+    content: '';
+    height: 1.5px;
+    width: 0;
+    background-color: #FBF7BA;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    transition: 0.5s ease;
+}
+ul li a:hover::after {
+    width: 100%;
+}
+ul li a:hover {
+    color: #FBF7BA;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-right: 80px;
+}
+li i {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+li i:hover {
+    color: #FBF7BA;
+    transform: scale(1.2);
+}
+.loginbtn {
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+}
+/*--------------------------------*/
+
+.reservation-box {
+    position: relative;
+    height: 420px;
+    width: 700px;
+    margin: 120px 0 0 260px;
+    color: #FBF7BA;
+    padding: 15px 20px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+}
+.blur-bg {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url('resto-design.avif');
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px);
+    z-index: 0;
+}
+.blur-bg::after { /* to make it darken */
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.reservation-content {
+    position: relative;
+    z-index: 1;
+}
+.reservation-content h1 {
+    margin-bottom: 8px; 
+    text-align: center;
+}
+.reservation-content h4 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    text-align: center;
+}
+.reservation-content td > label {
+    text-align: left;
+}
+.reservation-content form input {
+    width: 200px;
+    height: 30px;
+    outline: none;
+    border-bottom: 2px solid #FBF7BA;
+    border-top: none; border-left: none; border-right: none;
+    background-color: transparent;
+    color: #FBF7BA;
+    padding: 0 5px;
+    margin: 0 0 8px 10px;
+}
+input::-webkit-calendar-picker-indicator {
+    filter: invert(85%) sepia(20%) saturate(600%) hue-rotate(20deg);
+    cursor: pointer;
+}
+.submit-btn {
+    background-color: #FBF7BA;
+    color: #9D1F15;
+    border: none;
+    padding: 10px 30px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    width: 45%;
+}
+.submit-btn:hover {
+    background-color: #9D1F15;
+    color: #FBF7BA;
+    transition: 0.5s ease;
+}
+
+/* Contact components */
+#contact {
+    margin: 40px 0 30px 0;
+    background-color: #9D1F15;
+    color: white;
+}
+.contact-container {
+    width: 1000px;
+    padding: 20px;
+    text-align: center;
+    line-height: 1.8;
+}
+.contact-container h1 {
+    font-size: 30px;
+    color: #FBF7BA;
+}
+.contact-container ul {
+    list-style: none;
+}
+.contact-container li {margin: 0 0 20px 0;}
+.contact-container i {cursor: unset; margin-right: 5px;}
+.contact-container i:hover {
+    transform: none;
+    color: white;
+}
+
+/* Footer components */
+.footer-content {
+    background-color: #c5352b;
+    color: white;
+    padding: 20px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.footer-col {
+    align-items: end;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 0 15px 0;
+}
+.footer-col ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+.footer-col h3 {
+    margin-left: 72px;
+    font-size: 20px;
+}
+.fa-facebook, .fa-instagram, .fa-x-twitter, .fa-tiktok {
+    font-size: 20px;
+}
+.fa-facebook {color: #093caa;}
+.fa-instagram {
+    /* center of the radical gradient (30 from the left of the element and 110 form the top */
+    background: radial-gradient(circle at 30% 110%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    border-radius: 5px;
+    color: white;
+}
+.fa-instagram:hover {
+    background: none;
+}
+.fa-x-twitter {
+    color: black;
+}
+.fa-tiktok {
+    color: white;
+}
+.footer-col.sub {
+    flex-direction: row;
+    width: 600px;
+    line-height: 1.5;
+}
+.footer-col.sub input {
+    height: 25px;
+    outline: none;
+    border-bottom: 2px solid #FBF7BA;
+    border-top: none; border-left: none; border-right: none;
+    background-color: transparent;
+    color: white;
+}
+.footer-col.sub input::placeholder {
+    color: #FBF7BA;
+}
+.subscribe-btn {
+    height: 28px;
+    background-color: #FBF7BA;
+    color: #9D1F15;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    padding: 0 20px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+.subscribe-btn:hover {
+    background-color: #9D1F15;
+    color: #FBF7BA;
+    transition: 0.5s ease;
+}
+.footerbottom {
+    background-color: #9D1F15;
+    color: white;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 14px;
+}
