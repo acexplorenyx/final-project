@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="reservationstyle.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href=""><img src="logo.png" alt=""></a>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><button onclick="openLoginpage()" class="loginbtn"><i class="fa-solid fa-user"></i></button>
+                <li><i class="fa-solid fa-cart-shopping"></i></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="reservation-box">
+        <div class="blur-bg"></div>
+        <div class="reservation-content">
+            <h1>Reservation</h1>
+            <h4>Please fill out the form below to make your reservation.</h4>
+            <form action="" method="post">
+                <table>
+                    <tr>
+                        <td><label for="name">Name:</label></td>
+                        <td><input type="text" id="name" name="name" required><br></td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">Email:</label></td>
+                        <td><input type="email" id="email" name="email" required><br></td>
+                    </tr>
+                    <tr>
+                        <td><label for="phone">Phone Number:</label></td>
+                        <td><input type="tel" id="phone" name="phone" required><br></td>
+                    </tr>
+                    <tr>
+                        <td><label for="date">Date:</label></td>
+                        <td><input type="date" id="date" name="date" required><br></td>
+                    </tr>
+                    <tr>
+                        <td><label for="time">Time:</label></td>
+                        <td><input type="time" id="time" name="time" required><br></td>
+                    </tr>
+                    <tr>
+                        <td><label for="guests">Number of Guests:</label></td>
+                        <td><input type="number" id="guests" name="guests" min="1" required><br><br></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><button type="submit" class="submit-btn">Submit</button></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+
+    <section id="contact">
+        <div class="contact-container">
+            <h1>Contact Us</h1>
+            <p>If you have any questions or feedback, feel free to reach out to us!</p><br>
+            <ul>
+                <li><i class="fa-solid fa-location-dot"></i> Address: 123 Food Street, Bustos, Bulacan</li>
+                <li><i class="fa-solid fa-phone"></i> Phone: +1 234 567 890</li>
+                <li><i class="fa-solid fa-envelope"></i> Email: jrnofficial@jrn.com</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col sub">
+                <label for="subscription">Don't miss out on our latest news and offers!
+                    Subscribe to our newsletter.</label>
+                </label><br>
+                <input type="text" name="subscription" id="subscription" placeholder="Enter your email...">
+                <button type="submit" class="subscribe-btn">Subscribe</button>
+            </div>
+            <div class="footer-col media-icons">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-tiktok"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footerbottom">
+            <p>Copyright &copy; 2025 JRN. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        function openLoginpage() {
+            window.location.href = "loginpage.html";
+        }
+    </script>
+</body>
+</html>
