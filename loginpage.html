@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Signup Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="icon" type="image/png" href="logo.png">
+    
+    <style>
+        body {
+            background-image: url(resto-design.avif);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .form-container {
+            position: relative;
+            width: 400px;
+            height: 440px;
+            background-color: transparent;
+            border: 2px solid #FBF7BA;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            margin: 30px auto;
+            transition: transform 0.3s ease, height .2s ease;
+        }
+        .form-container.active {
+            height: 630px;
+        }
+        .form-container.active-popup {
+            transform: scale(1);
+        }
+        .form-container .form-box.login {
+            transition: transform 0.18s ease;
+            transform: translateX(0);
+        }
+        .form-container.active .form-box.login {
+            transition: none;
+            transform: translateX(-400px);
+        }
+        .form-container .form-box.signup {
+            position: absolute;
+            transition: none;
+            transform: translateX(400px);
+            box-sizing: border-box;
+        }
+        .form-container.active .form-box.signup {
+            transition: transform 0.18s ease;
+            transform: translateX(0);
+        }
+        .form-container .close-btn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #FBF7BA;
+            color: #9D1F15;
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-bottom-left-radius: 20px;
+            cursor: pointer;
+            z-index: 1;
+        }
+        .form-container .form-box {
+            width: 100%;
+            padding: 40px;
+        }
+        .form-box h2 {
+            color: #fcf8c0;
+            text-align: center;
+            font-size: 30px;
+        }
+        .input-containter {
+            position: relative;
+            margin: 30px 0;
+            width: 100%;
+            height: 50px;
+            border-bottom: 2px solid #f4ee99;
+        }
+        .input-containter label {
+            position: absolute;
+            top: 50%;
+            left: 5px;
+            color: #f4ee99;
+            transform: translateY(-30%);
+            transition: .5s ease;
+            font-size: 16px;
+            pointer-events: none;
+        }
+        .input-containter input:focus~label,
+        .input-containter input:valid~label {
+            top: -4px;
+        }
+        .input-containter input {
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            color: #FBF7BA;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 0 35px 0 5px;
+            box-sizing: border-box;
+        }
+        .input-containter .icon {
+            position: absolute;
+            right: 8px;
+            font-size: 20px;
+            color: #f4ee99;
+            line-height: 50px;
+        }
+        .input-box {
+            font-size: 15px;
+            color: #f4ee99;
+            font-weight: 500;
+            margin: -15px 0 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .input-box input, label {
+            accent-color: #f4ee99;
+        }
+        .form-box.signup .input-containter {
+            margin: 15px 0;
+        }
+        .form-box.signup h2 {
+            margin-bottom: 15px;
+        }
+        .form-box.signup h4 {
+            margin-bottom: 20px;
+            color: #fcf8c0;
+            text-align: center;
+            font-size: 16px;
+        }
+        .input-box-signup {
+            font-size: 15px;
+            color: #f4ee99;
+            font-weight: 500;
+            margin: 15px 0 20px;
+        }
+        .input-box-signup input,
+        label {
+            accent-color: #f4ee99;
+            margin-right: 5px;
+        }
+        .input-box-signup input {
+            margin-left: 5px;
+        }
+        .input-box a {
+            color: #f4ee99;
+            text-decoration: none;
+            margin-right: 5px;
+        }
+        .input-box a:hover {
+            text-decoration: underline;
+        }
+        #btn {
+            width: 100%;
+            height: 45px;
+            background-color: #9D1F15;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 500;
+        }
+        #btn:hover {
+            background-color: #cd3f34;
+            transition: 0.5s ease;
+        }
+        .form-box p .signup-btn {
+            color: #f4ee99;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .form-box p,
+        .signup-btn {
+            text-align: center;
+            margin: 25px 0;
+            color: #f4ee99;
+        }
+        .form-box .signup-btn:hover {
+            text-decoration: underline;
+        }
+        .form-box .login-btn {
+            color: #f4ee99;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .form-box .login-btn:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Login -->
+    <div class="form-container">
+        <i class="fa-solid fa-x close-btn" onclick="closeDialog()"></i>
+        <div class="form-box login">
+            <h2>Login</h2>
+            <form action="#">
+                <div class="input-containter">
+                    <span class="icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </span>
+                    <input type="email" name="email" id="email" required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-containter">
+                    <span class="icon">
+                        <i class="fa-solid fa-lock"></i>
+                    </span>
+                    <input type="password" name="password" id="password" required>
+                    <label for="password">Password</label>
+                </div>
+                <div class="input-box">
+                    <label for="remember"><input type="checkbox">Remember password</label>
+                    <a href="#">Forgot password?</a>
+                </div>
+                <button type="submit" id="btn">Login</button>
+                <p>Don't have an account? <a href="#" class="signup-btn">Sign Up</a></p>
+            </form>
+        </div>
+
+        <!-- Signup -->
+        <div class="form-box signup">
+            <h2>Sign Up</h2>
+            <h4>Please fill in this form to create an account.</h4>
+            <form action="#">
+                <div class="input-containter">
+                    <span class="icon">
+                        <i class="fa-solid fa-user"></i>
+                    </span>
+                    <input type="text" name="username" id="username" required>
+                    <label for="username">Username</label>
+                </div>
+                <div class="input-containter">
+                    <span class="icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </span>
+                    <input type="text" name="phone" id="phone" required>
+                    <label for="phone">Phone Number</label>
+                </div>
+                <div class="input-containter">
+                    <span class="icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </span>
+                    <input type="email" name="email" id="email" required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-containter">
+                    <span class="icon">
+                        <i class="fa-solid fa-lock"></i>
+                    </span>
+                    <input type="password" name="password" id="password" required>
+                    <label for="password">Password</label>
+                </div>
+                <div class="input-containter">
+                    <span class="icon">
+                        <i class="fa-solid fa-lock"></i>
+                    </span>
+                    <input type="password" name="cpassword" id="cpassword" required>
+                    <label for="cpassword">Confirm Password</label>
+                </div>
+                <div class="input-box-signup">
+                    <label for="remember"><input type="checkbox">
+                        I agree to the terms and conditions
+                    </label>
+                </div>
+                <button type="submit" id="btn">Sign Up</button>
+                <p>Already have an account? <a href="#" class="login-btn">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const container = document.querySelector('.form-container');
+        const loginlink = document.querySelector('.login-btn');
+        const signuplink = document.querySelector('.signup-btn');
+        const closebtn = document.querySelector('.close-btn');        
+        signuplink.addEventListener('click', () => {
+            container.classList.add('active');
+        });
+
+        loginlink.addEventListener('click', () => {
+            container.classList.remove('active');
+        });
+
+        function openDialog() {
+            container.classList.add('active-popup');
+        }
+
+        function closeDialog() {
+            window.location.href = "index.html";
+            container.classList.remove('active-popup');
+            container.classList.remove('active'); // reset to login state on close
+        }
+    </script>
+</body>
+
+</html>
