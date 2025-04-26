@@ -31,7 +31,7 @@
             transition: transform 0.3s ease, height .2s ease;
         }
         .form-container.active {
-            height: 630px;
+            height: 640px;
         }
         .form-container.active-popup {
             transform: scale(1);
@@ -202,6 +202,14 @@
         .form-box .login-btn:hover {
             text-decoration: underline;
         }
+        .form-box .role {
+            font-size: 14px;
+            color: #f4ee99;
+            font-weight: 500;
+            margin: 10px 0 20px;
+            text-align: center;
+            accent-color: #cd3f34;
+        }
     </style>
 </head>
 
@@ -231,6 +239,11 @@
                     <a href="#">Forgot password?</a>
                 </div>
                 <button type="submit" id="btn">Login</button>
+                <div class="role">
+                    <label for="role">Select role type:</label>
+                    <input type="radio" name="role" id="role" required> User
+                    <input type="radio" name="role" id="role" required> Admin
+                </div>
                 <p>Don't have an account? <a href="#" class="signup-btn">Sign Up</a></p>
             </form>
         </div>
@@ -281,6 +294,11 @@
                     </label>
                 </div>
                 <button type="submit" id="btn">Sign Up</button>
+                <div class="role">
+                    <label for="role">Select role type:</label>
+                    <input type="radio" name="role" id="role" required> User
+                    <input type="radio" name="role" id="role" required> Admin
+                </div>
                 <p>Already have an account? <a href="#" class="login-btn">Login</a></p>
             </form>
         </div>
